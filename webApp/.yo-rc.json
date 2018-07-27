@@ -1,0 +1,16 @@
+{
+  "generator-webpack-angularjs": {
+    "app": "CRMS",
+    "module": "mum",
+    "services": [
+      "LoginSvc"
+    ],
+    "directives": [
+      "titlecase"
+    ],
+    "states": [
+      "login",
+      "home"
+    ]
+  }
+}
