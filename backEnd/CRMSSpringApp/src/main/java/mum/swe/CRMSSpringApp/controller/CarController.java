@@ -23,7 +23,7 @@ public class CarController {
 	@Autowired
 	private CarService carService;
 
-	@RequestMapping(value="/cars", method = RequestMethod.GET)
+	@RequestMapping(value="/mycars", method = RequestMethod.GET)
 	public ModelAndView cars(){		
 		List<Car> cars =  carService.findAll();		
 		ModelAndView modelAndView = new ModelAndView();
@@ -32,13 +32,13 @@ public class CarController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/car", method = RequestMethod.GET)
+	@RequestMapping(value="/mycar", method = RequestMethod.GET)
 	public String create(Model model){			
 		model.addAttribute("car", new Car());
 		return "car/edit";
 	}
 	
-	@RequestMapping(value = "/car", method = RequestMethod.POST)
+	@RequestMapping(value = "/mycar", method = RequestMethod.POST)
 	public String edit(@Valid @ModelAttribute("car") Car car, 
 			BindingResult result, Model model)  {
 
@@ -50,15 +50,15 @@ public class CarController {
 		return "redirect:/cars";
 	}	
 	
-	@RequestMapping(value="/car/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/mycar/{id}", method = RequestMethod.GET)
 	public String view(@PathVariable Long id, Model model){	
 		model.addAttribute("car", carService.findById(id));
 		return "car/edit";
 	}
 	
-	@RequestMapping(value="/car/delete/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/mycar/delete/{id}", method = RequestMethod.GET)
 	public String delete(@PathVariable Long id, Model model){		
 		carService.delete(id);
-		return "redirect:/cars";
+		return "redirect:/mycars";
 	}	
 }
