@@ -1,4 +1,4 @@
-package mum.swe.CRMSSpringApp.controller;
+package mum.swe.CRMSSpringApp.controller.web;
 
 import java.util.List;
 

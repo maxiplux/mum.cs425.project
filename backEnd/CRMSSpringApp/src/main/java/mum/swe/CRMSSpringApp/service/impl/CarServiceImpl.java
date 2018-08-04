@@ -35,5 +35,11 @@ public class CarServiceImpl implements CarService{
 		carRepository.deleteById(id);
 	}
 
+	/*@Override
+	public void updateCar(Car oldCar, Car newCar) {
+		 carRepository.updateCar(oldCar, newCar);
+	}
+*/
+
 }
 
