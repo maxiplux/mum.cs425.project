@@ -14,25 +14,12 @@ function homeCtrl($scope, $sessionStorage, $state, $filter, LoginSvc, CarSvc) {
         link: $state.href(x.name)
       }
     });
-  $scope.cars = CarSvc.fnGetAll();
-  console.log(CarSvc.fnFind());
-  $scope.tableData = [
-    ['#', 'Header', 'Header', 'Header', 'Header' ],
-    ["1001","Lorem","ipsum","dolor","sit"],
-    ["1002","amet","consectetur","adipiscing","elit"],
-    ["1003","Integer","nec","odio","Praesent"],
-    ["1003","libero","Sed","cursus","ante"],
-    ["1004","dapibus","diam","Sed","nisi"],
-    ["1005","Nulla","quis","sem","at"],
-    ["1006","nibh","elementum","imperdiet","Duis"],
-    ["1007","sagittis","ipsum","Praesent","mauris"],
-    ["1008","Fusce","nec","tellus","sed"],
-    ["1009","augue","semper","porta","Mauris"],
-    ["1010","massa","Vestibulum","lacinia","arcu"],
-    ["1011","eget","nulla","Class","aptent"],
-    ["1012","taciti","sociosqu","ad","litora"],
-    ["1013","torquent","per","conubia","nostra"]
-  ]
+  let promise = CarSvc.fnGetAll();
+    promise.then(function (objData) {
+      $scope.cars = objData._embedded.cars;
+    });
+
+
 
   $scope.signout = signout;
 
