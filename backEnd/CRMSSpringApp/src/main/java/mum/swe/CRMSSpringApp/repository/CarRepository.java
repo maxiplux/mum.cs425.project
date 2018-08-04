@@ -7,5 +7,5 @@ import mum.swe.CRMSSpringApp.model.Car;
 
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long>{
-	
+
 }
