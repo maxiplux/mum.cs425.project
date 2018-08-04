@@ -3,8 +3,8 @@ var angular = require('angular');
 
 require('../css/home.css')
 
-function homeCtrl($scope, $sessionStorage, $state, $filter, LoginSvc) {
-  $scope.title = 'CRMS';
+function homeCtrl($scope, $sessionStorage, $state, $filter, LoginSvc, CarSvc) {
+  $scope.title = 'client';
   $scope.navBar = require('../includes/navbar.html')
   $scope.links = $state.get()
     .filter(x => x.name.startsWith('home.'))
@@ -14,6 +14,8 @@ function homeCtrl($scope, $sessionStorage, $state, $filter, LoginSvc) {
         link: $state.href(x.name)
       }
     });
+  $scope.cars = CarSvc.fnGetAll();
+  console.log(CarSvc.fnFind());
   $scope.tableData = [
     ['#', 'Header', 'Header', 'Header', 'Header' ],
     ["1001","Lorem","ipsum","dolor","sit"],
@@ -53,14 +55,15 @@ homeCtrl.$inject = [
   '$sessionStorage',
   '$state',
   '$filter',
-  'LoginSvc'
+  'LoginSvc',
+  'CarSvc'
 ]
 
 function routeConfig($stateProvider) {
   $stateProvider.state(stateConfig)
 }
 
-angular.module('mum')
+angular.module('car')
   .controller('homeCtrl', homeCtrl)
   .config([ '$stateProvider', routeConfig ])
 

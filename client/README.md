@@ -1,6 +1,6 @@
-# CRMS #
+# client #
 
-Client for Car Rental Management System
+Client Renta Car
 
 ## Building & Running ##
 

@@ -1,11 +1,11 @@
 'use strict';
-function mumTable(){
+function carTable(){
   return {
     restrict: 'A',
     scope: {
       rows: '=data'
     },
-    templateUrl: require('./mum-table.html'),
+    templateUrl: require('./car-table.html'),
     link: function(scope, element, attrs, controller, transcludeFn){
       var unwatch = scope.$watch('rows', (nv, ov) => {
         if ( !!nv ) {
@@ -21,11 +21,11 @@ function mumTable(){
   }
 }
 
-angular.module('mum')
-  .directive('mumTable', mumTable)
+angular.module('car')
+  .directive('carTable', carTable)
 
 module.exports = {
-  name: 'mumTable',
-  directive: mumTable
+  name: 'carTable',
+  directive: carTable
 }
 

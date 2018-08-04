@@ -11,6 +11,7 @@ require('bootstrap/dist/js/bootstrap.js');
 require('font-awesome/css/font-awesome.css')
 require('popper.js/dist/popper.js');
 require('jquery/dist/jquery.js');
+require('restangular');
 
 // util
 function importAll(r) {
@@ -18,22 +19,24 @@ function importAll(r) {
 }
 
 // begin module
-angular.module('mum', ['ui.router', 'ngStorage']);
+angular.module('car', ['ui.router', 'ngStorage', 'restangular']);
 
 // app deps
 require('./constants.js');
 
 function addAuthGuard($rootScope, $location, $sessionStorage){
   // redirect to login page if not logged in and trying to access a restricted page
-  $rootScope.$on('$locationChangeStart', function (event, next, current) {
-    if ( $location.path() != '/login' && !$sessionStorage.user ) {
-      $location.path('/login');
-    }
-  });
+  // $rootScope.$on('$locationChangeStart', function (event, next, current) {
+  //   if ( $location.path() != '/login' && !$sessionStorage.user ) {
+  //     $location.path('/home');
+  //   }
+  // });
 }
 
-function defaultRoute($urlRouterProvider){
-  $urlRouterProvider.otherwise('/home')
+function setDefaults($urlRouterProvider, RestangularProvider,carConstants ){
+   $urlRouterProvider.otherwise('/home')
+   RestangularProvider.setBaseUrl(carConstants.base_url);
+   RestangularProvider.setFullResponse(true);
 }
 
 
@@ -49,22 +52,22 @@ importAll(require.context('./directives', false, /\.js$/))
 // routers
 importAll(require.context('./login', false, /.js$/))
 importAll(require.context('./home', true, /.js$/))
+importAll(require.context('./car', true, /.js$/))
 
-angular.module('mum')
-  .config(['$urlRouterProvider', defaultRoute])
+angular.module('car')
+  .config(['$urlRouterProvider', 'RestangularProvider', 'carConstants', setDefaults])
   .run(['$rootScope', '$location', '$sessionStorage', addAuthGuard])
 /*
 // https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
 // debugging
-angular.module('mum').run(function($rootScope) {
+angular.module('car').run(function($rootScope) {
   $rootScope.$on("$stateChangeError", console.log.bind(console));
 });
 */
 
-module.exports = angular.module('mum');
+module.exports = angular.module('car');
 // load index
 require('./index.html')
-console.log('mum Ready')
 
 
 

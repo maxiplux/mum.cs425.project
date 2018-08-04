@@ -5,7 +5,7 @@ require('../css/login.css')
 
 function loginCtrl($scope, $sessionStorage, $state, $filter, LoginSvc) {
   $scope.progress = false;
-  $scope.title = 'CRMS'
+  $scope.title = 'client'
   $scope.copyrightYear = new Date().getFullYear();
   LoginSvc.logout();
   $scope.submitForm = function(isValid){
@@ -47,7 +47,7 @@ function routeConfig($stateProvider) {
   $stateProvider.state(stateConfig)
 }
 
-angular.module('mum')
+angular.module('car')
   .controller('loginCtrl', loginCtrl)
   .config([ '$stateProvider', routeConfig ])
 
