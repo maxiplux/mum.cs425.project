@@ -1,7 +1,7 @@
 {
   "generator-webpack-angularjs": {
-    "app": "CRMS",
-    "module": "mum",
+    "app": "client",
+    "module": "car",
     "services": [
       "LoginSvc"
     ],
@@ -10,7 +10,8 @@
     ],
     "states": [
       "login",
-      "home"
+      "home",
+      "home.new"
     ]
   }
 }

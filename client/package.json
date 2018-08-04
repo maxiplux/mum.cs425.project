@@ -1,10 +1,10 @@
 {
-  "name": "CRMS",
-  "description": "Client for Car Rental Management System",
+  "name": "client",
+  "description": "Client Renta Car",
   "version": "0.0.1",
   "main": "src/app.js",
   "author": {
-    "name": "Team 2",
+    "name": "Ezequiel Suarez",
     "email": "ezesubu@gmail.com"
   },
   "private": true,
@@ -41,6 +41,7 @@
     "jquery": "^3.3.1",
     "ngstorage": "^0.3.11",
     "nprogress": "^0.2.0",
-    "popper.js": "^1.12.9"
+    "popper.js": "^1.12.9",
+    "restangular": "^1.6.1"
   }
 }

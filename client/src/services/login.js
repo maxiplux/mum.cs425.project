@@ -1,10 +1,10 @@
 'use strict';
 
-function LoginSvc($http, $sessionStorage, mumConstants){
+function LoginSvc($http, $sessionStorage, carConstants){
 
   function login(username, password) {
     let auth = btoa(`${username}:${password}`)
-    return $http.get(mumConstants.loginUrl, {
+    return $http.get(carConstants.loginUrl, {
       headers: {
         'Authorization': 'Basic ' + auth
       }
@@ -45,11 +45,11 @@ function LoginSvc($http, $sessionStorage, mumConstants){
 const serviceConfig = [
   '$http',
   '$sessionStorage',
-  'mumConstants',
+  'carConstants',
   LoginSvc
 ]
 
-angular.module('mum')
+angular.module('car')
   .factory('LoginSvc', serviceConfig)
 
 module.exports = {

@@ -11,7 +11,7 @@ function titleCase(){
 }
 
 
-angular.module('mum')
+angular.module('car')
   .filter('titlecase', titleCase)
 
 module.exports = {
