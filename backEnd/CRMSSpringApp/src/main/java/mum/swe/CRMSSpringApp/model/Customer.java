@@ -14,6 +14,7 @@ public class Customer {
 
     private Double accountNumber;
     private Double balance;
+
     public Customer()
     {}
 

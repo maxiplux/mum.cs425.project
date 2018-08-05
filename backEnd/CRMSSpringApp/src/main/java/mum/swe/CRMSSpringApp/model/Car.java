@@ -18,11 +18,12 @@ public class Car {
 	private String brand;
 	private String model;
 	private String color;
+
 	private Long num_of_seat;
 	
 	@ManyToOne
 	private Category category;
-	private String status;
+	private String status ; //(Ahmed we have it as string not number) vvalues are 0 , 1 , 2 ( Metting about it 04 08 2018)
 
     public Car() {
     }

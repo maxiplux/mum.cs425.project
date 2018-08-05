@@ -22,7 +22,6 @@ public class CarController {
 	
 	@Autowired
 	private CarService carService;
-
 	@RequestMapping(value="/mycars", method = RequestMethod.GET)
 	public ModelAndView cars(){		
 		List<Car> cars =  carService.findAll();		
