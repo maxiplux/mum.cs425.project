@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("mum.swe.CRMSSpringApp")
 public class CrmsSpringAppApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CrmsSpringAppApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CrmsSpringAppApplication.class, args);
+    }
 }
