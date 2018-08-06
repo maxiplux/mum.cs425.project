@@ -1,70 +1,59 @@
 package mum.swe.CRMSSpringApp.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 
 @Entity
 
 @Table(name = "cetegory")
 public class Category {
-	public Category()
-	{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "category_name")
+    private String name;
+    @Column(name = "category_price")
+    private double price;
+    @OneToMany(mappedBy = "category")
 
-	}
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name = "category_name")
-	private String name;
-	
-	@Column(name = "category_price")
-	private double price;
+    private List<Car> cars = new ArrayList<Car>();
 
-	public Long getId() {
-		return id;
-	}
+    public Category() {
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public List<Car> getCars() {
-		return cars;
-	}
+    public double getPrice() {
+        return price;
+    }
 
-	public void setCars(List<Car> cars) {
-		this.cars = cars;
-	}
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-	@OneToMany(mappedBy = "category")
+    public List<Car> getCars() {
+        return cars;
+    }
 
-	private List<Car> cars = new ArrayList<Car>();
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
 
 }

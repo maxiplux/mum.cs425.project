@@ -1,29 +1,22 @@
 package mum.swe.CRMSSpringApp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 
 
 @Entity
 public class Car {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String brand;
-	private String model;
-	private String color;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String brand;
+    private String model;
+    private String color;
 
-	private Long num_of_seat;
-	
-	@ManyToOne
-	private Category category;
-	private String status ; //(Ahmed we have it as string not number) vvalues are 0 , 1 , 2 ( Metting about it 04 08 2018)
+    private Long num_of_seat;
+
+    @ManyToOne
+    private Category category;
+    private String status; //(Ahmed we have it as string not number) vvalues are 0 , 1 , 2 ( Metting about it 04 08 2018)
 
     public Car() {
     }

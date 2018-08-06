@@ -1,8 +1,10 @@
 package mum.swe.CRMSSpringApp.model;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
 public class Customer {
     @Id
@@ -13,10 +15,16 @@ public class Customer {
     private String lastName;
 
     private Double accountNumber;
-    private Double balance;
+    private Double balance; //  current balance on account user or prepaid credit
 
-    public Customer()
-    {}
+    public Customer() {
+    }
+
+    public Customer(String firstName, String lastName, Double accountNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.accountNumber = accountNumber;
+    }
 
     public Double getBalance() {
         return balance;
@@ -24,12 +32,6 @@ public class Customer {
 
     public void setBalance(Double balance) {
         this.balance = balance;
-    }
-
-    public Customer(String firstName, String lastName, Double accountNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.accountNumber = accountNumber;
     }
 
     public long getId() {

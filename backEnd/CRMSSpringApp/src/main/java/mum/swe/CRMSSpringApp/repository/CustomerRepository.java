@@ -1,4 +1,5 @@
 package mum.swe.CRMSSpringApp.repository;
+
 import mum.swe.CRMSSpringApp.model.Customer;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
