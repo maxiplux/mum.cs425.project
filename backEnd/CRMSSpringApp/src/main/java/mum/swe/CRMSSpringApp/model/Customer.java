@@ -42,6 +42,11 @@ public class Customer {
         this.id = id;
     }
 
+    public String getFullname() {
+
+        return String.format("%s %s", this.firstName, this.lastName != null ? this.lastName : "");
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -64,5 +69,16 @@ public class Customer {
 
     public void setAccountNumber(Double accountNumber) {
         this.accountNumber = accountNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", accountNumber=" + accountNumber +
+                ", balance=" + balance +
+                '}';
     }
 }

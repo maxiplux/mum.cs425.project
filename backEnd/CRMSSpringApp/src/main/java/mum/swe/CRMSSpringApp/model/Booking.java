@@ -16,10 +16,10 @@ public class Booking {
     private Date start;
     private Date end;
 
-    private Long num_of_seat;
+
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "car_id", nullable = true)
-    private Car car;
+    public Car car;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "customer_id", nullable = true)
@@ -49,13 +49,7 @@ public class Booking {
         this.end = end;
     }
 
-    public Long getNum_of_seat() {
-        return num_of_seat;
-    }
 
-    public void setNum_of_seat(Long num_of_seat) {
-        this.num_of_seat = num_of_seat;
-    }
 
     public Car getCar() {
         return car;
@@ -72,4 +66,6 @@ public class Booking {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+
 }

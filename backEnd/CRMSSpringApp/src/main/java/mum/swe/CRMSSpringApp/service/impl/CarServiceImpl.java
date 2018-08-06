@@ -36,7 +36,7 @@ public class CarServiceImpl implements CarService {
 
 	/*@Override
 	public void updateCar(Car oldCar, Car newCar) {
-		 bookingRepository.updateCar(oldCar, newCar);
+		 paymentRepository.updateCar(oldCar, newCar);
 	}
 */
 

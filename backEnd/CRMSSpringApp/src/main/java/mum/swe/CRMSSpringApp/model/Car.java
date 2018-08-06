@@ -30,6 +30,7 @@ public class Car {
         this.status = status;
     }
 
+
     public Long getId() {
         return id;
     }
@@ -58,6 +59,10 @@ public class Car {
         return color;
     }
 
+    public String getName() {
+        return String.format("%s/%s", this.brand, this.model);
+    }
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -84,5 +89,18 @@ public class Car {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", num_of_seat=" + num_of_seat +
+                ", category=" + category +
+                ", status='" + status + '\'' +
+                '}';
     }
 }

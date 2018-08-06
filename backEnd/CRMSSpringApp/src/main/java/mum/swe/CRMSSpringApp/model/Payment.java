@@ -1,7 +1,6 @@
 package mum.swe.CRMSSpringApp.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 public class Payment {
@@ -9,7 +8,15 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int rent_duration;
+    private Double amount;
 
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "booking_id", nullable = true)
