@@ -6,18 +6,19 @@ import java.util.List;
 
 
 @Entity
-
 @Table(name = "cetegory")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "category_name")
     private String name;
+
     @Column(name = "category_price")
     private double price;
-    @OneToMany(mappedBy = "category")
 
+    @OneToMany(mappedBy = "category")
     private List<Car> cars = new ArrayList<Car>();
 
     public Category() {
@@ -55,5 +56,6 @@ public class Category {
     public void setCars(List<Car> cars) {
         this.cars = cars;
     }
+
 
 }

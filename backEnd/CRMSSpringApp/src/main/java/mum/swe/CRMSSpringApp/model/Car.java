@@ -8,6 +8,7 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String brand;
     private String model;
     private String color;
@@ -16,6 +17,7 @@ public class Car {
 
     @ManyToOne
     private Category category;
+
     private String status; //(Ahmed we have it as string not number) vvalues are 0 , 1 , 2 ( Metting about it 04 08 2018)
 
     public Car() {
