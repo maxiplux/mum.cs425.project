@@ -1,4 +1,4 @@
-package mum.swe.CRMSSpringApp.repository;
+package mum.swe.CRMSSpringApp.repository.api;
 
 import mum.swe.CRMSSpringApp.model.Car;
 import mum.swe.CRMSSpringApp.model.Customer;
@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @RepositoryRestResource(collectionResourceRel = "cars", path = "cars")
-public interface CarRepository2 extends PagingAndSortingRepository<Car, Long> {
+public interface CarRestRepository extends PagingAndSortingRepository<Car, Long> {
 
     List<Car> findByBrand(@Param("brand") String brand);
 
