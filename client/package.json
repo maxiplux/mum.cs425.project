@@ -34,7 +34,7 @@
     "uglifyjs-webpack-plugin": "^1.2.3"
   },
   "dependencies": {
-    "@uirouter/angularjs": "^1.0.15",
+    "@uirouter/angularjs": "^1.0.22",
     "angular": "^1.6.9",
     "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
